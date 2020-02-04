@@ -1,0 +1,56 @@
+%!PS-Adobe-3.0 EPSF-3.0
+%%BoundingBox: 0 0 200 200
+
+% epstopdf --NOSAFER 01.eps
+(../../../ps-steal/steal.ps) run
+
+(../../../ps-math/)(2d-geom.ps) steal
+
+/circle {
+	0 360 arc stroke
+} def
+/point {
+	1 0 360 arc	stroke
+} def
+
+/line {
+	2exch moveto lineto stroke
+} def
+
+/ray {
+	0 dict begin
+		/l 2edef
+		/O 2edef
+		/B l O 2sub 2ort 
+		200 2mul 
+		2def
+		O B line
+	end
+} def
+
+/pcircle {
+	1 2index 2sub 2hypot circle
+} def
+
+50 50 translate
+
+%DANO
+/O 0 0 2def % 
+/l 100 0 2def
+
+O point
+O l ray
+
+%
+/A
+l O 2sub 2ort 70 2mul 
+2def
+
+A point
+A O pcircle
+O A pcircle
+
+A A O 2distance O A O 2distance 2crosscircle
+/C2 2edef /C1 2edef
+C1 point
+O C1 ray
