@@ -18,6 +18,7 @@
 	2exch moveto lineto stroke
 } def
 
+%[Ox, Oy, lx, ly] - луч из точки O, проходящий через точку l и тянущийся далеко за пределы чертежа
 /ray {
 	0 dict begin
 		/l 2edef
@@ -28,6 +29,7 @@
 		O B line
 	end
 } def
+
 
 /pcircle {
 	1 2index 2sub 2hypot circle
