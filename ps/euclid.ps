@@ -9,12 +9,14 @@
 	2exch moveto lineto stroke
 } def
 
+/curinfinitylength 200 def
+
 /ray {
 	0 dict begin
 		/l 2edef
 		/O 2edef
 		/B l O 2sub 2ort 
-		200 2mul 
+		curinfinitylength 2mul 
 		2def
 		O B line
 	end
